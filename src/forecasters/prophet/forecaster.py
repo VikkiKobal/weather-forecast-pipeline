@@ -1,27 +1,5 @@
-import os
-import sys
-import logging
-
-# Silence Prophet and CmdStanPy completely
-logging.getLogger('prophet').setLevel(logging.ERROR)
-logging.getLogger('cmdstanpy').setLevel(logging.ERROR)
-
-# Also block cmdstanpy INFO logs from standard output
-class FilterInfo(logging.Filter):
-    def filter(self, record):
-        return record.levelno > logging.INFO
-
-logging.getLogger('cmdstanpy').addFilter(FilterInfo())
-
-# Redirect stderr to suppress the "Importing plotly failed" message
-stderr = sys.stderr
-sys.stderr = open(os.devnull, 'w')
-try:
-    from prophet import Prophet
-finally:
-    sys.stderr = stderr
-
 import pandas as pd
+from prophet import Prophet
 from src.core.base_forecaster import WeatherForecaster
 
 class ProphetForecaster(WeatherForecaster):
@@ -47,4 +25,3 @@ class ProphetForecaster(WeatherForecaster):
         future = pd.DataFrame({'ds': [pd.to_datetime(f"{year}-08-01")]})
         forecast = self.model.predict(future)
         return float(forecast['yhat'].iloc[0])
-

@@ -21,8 +21,6 @@ logger = logging.getLogger(__name__)
 # Suppress technical logs from libraries
 warnings.filterwarnings("ignore")
 os.environ['CMDSTANPY_LOG_LEVEL'] = '30'
-logging.getLogger('prophet').setLevel(logging.ERROR)
-logging.getLogger('numexpr').setLevel(logging.ERROR)
 
 from src.core.data_loader import WeatherDataLoader
 # ... (rest of imports)
