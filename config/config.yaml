@@ -1,0 +1,21 @@
+data:
+  start_year: 2010
+  end_year: 2025
+  target_max: "avg_tmax"
+  target_min: "avg_tmin"
+  locations:
+    Kyiv: [50.45, 30.52]
+    Kharkiv: [49.99, 36.23]
+    Odesa: [46.48, 30.72]
+    Lviv: [49.84, 24.03]
+    Dnipro: [48.46, 35.04]
+
+models:
+  regression:
+    type: "theilsen"
+  prophet:
+    changepoint_prior_scale: 0.05
+
+validation:
+  test_years: [2023, 2024, 2025]
+
