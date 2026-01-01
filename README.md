@@ -18,6 +18,7 @@ This project is a Python pipeline for forecasting average temperatures in Ukrain
 
 ### 1. Data Selection (2010 - 2025)
 I selected data starting from 2010 to focus on recent climate patterns. This avoids using older data that may not represent current temperature norms.
+To provide a generalized forecast for Ukraine, I selected 5 major cities representing different regions: Kyiv (Center), Kharkiv (East), Odesa (South), Lviv (West), and Dnipro (Central-East). The pipeline fetches data for each location and calculates a national average.
 
 ### 2. Model Selection (Ensemble)
 I used an ensemble of two models to improve prediction stability:
