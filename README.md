@@ -17,7 +17,7 @@ This project is a Python pipeline for forecasting average temperatures in Ukrain
 ## My Approach
 
 ### 1. Data Selection (2010 - 2025)
-- **Modern Trends**: I selected data starting from 2010 to focus on recent climate patterns. This avoids using older data that may not represent current temperature norms.
+- I selected data starting from 2010 to focus on recent climate patterns. This avoids using older data that may not represent current temperature norms.
 
 ### 2. Model Selection (Ensemble)
 I used an ensemble of two models to improve prediction stability:
